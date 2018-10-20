@@ -1,0 +1,30 @@
+<!-- User一覧 -->
+<div class="body container">
+	<div class="row">
+		<div class="col-lg-4">
+			<%= render 'users/list',post: @post, user: @user %>
+		</div>
+
+
+		<div class="col-lg-8">
+			<table class="table table-striped">
+				<h1>Users</h1>
+				 <tr>
+				 	<th>image</th>
+				 	<th>name</th>
+				 	<th></th>
+				 </tr>
+				<% @users.each do |user| %>	　
+					<tr>
+					<td><%= attachment_image_tag user, :image ,:fill,50,50,format:'jpg',fallback: "noimage.jpg" %></td>
+					<td><%= user.name %></td>
+					<td><%= link_to "show", user_path(user.id) %></td>
+				<% end %>
+			</table>
+		</div>
+	</div>
+</div>
+
+
+
+

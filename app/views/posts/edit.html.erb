@@ -1,0 +1,32 @@
+<!-- Post -->
+
+<div class="body container">
+	<div class="row">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+
+			<h1>Editing Book</h1>
+
+			<%= form_for(@post) do |f| %>
+			<tr>
+				<td><h3>Title</h3></td>
+			</tr>
+			<tr>
+				<td><%= f.text_area :title %></td>
+			</tr>
+			<tr>
+				<td><h3>Opinion</h3></td>
+			</tr>
+				<td><%= f.text_area :opinion %><br></td>
+			</tr>
+			<tr>
+				<td><%= f.submit'Update Book',class: "CreateBook label-primary" %></td>
+			</tr>
+			<% end %>
+
+			<%= link_to"show",post_path(@post),class: "book_#{@post.id}"%>
+			<%= link_to"Back",posts_path(@posts),class: "back"%>
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+</div>
