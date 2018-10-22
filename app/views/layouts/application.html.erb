@@ -14,56 +14,57 @@
   <body>
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="container">
-      <nav class="nav navbar-nav navbar-left">
-        <span>Bookers</span>
-      </nav>
-    
-    <nav>
-     <ul class="nav navbar-nav navbar-right">
-      <% if user_signed_in? %>
-        <li class="glyphicon glyphicon-home" aria-hidden="true">
-          <%= link_to 'Home', user_path(current_user.id) %>
-        </li>
+        <nav class="nav navbar-nav navbar-left">
+            <span>Bookers</span>
+        </nav>
+        
+        <nav>
+         <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li class="glyphicon glyphicon-home" aria-hidden="true">
+              <%= link_to 'Home', user_path(current_user.id), class: "home" %>
+            </li>
 
-        <li class="glyphicon glyphicon-user" aria-hidden="true">
-          <%= link_to "Users", users_path %>
-        </li>
+            <li class="glyphicon glyphicon-user" aria-hidden="true">
+              <%= link_to "Users", users_path, class: "users" %>
+            </li>
 
-        <li class="glyphicon glyphicon-book" aria-hidden="true">
-          <%= link_to"Books", posts_path %>
-        </li>
+            <li class="glyphicon glyphicon-book" aria-hidden="true">
+              <%= link_to"Books", posts_path, class: "books" %>
+            </li>
 
-        <li class="glyphicon glyphicon-log-in" aria-hidden="true">
-          <%= link_to "logout", destroy_user_session_path, method: :delete %>
-        </li>
+            <li class="glyphicon glyphicon-log-in" aria-hidden="true">
+              <%= link_to "logout", destroy_user_session_path, method: :delete, class: "logout" %>
+            </li>
 
 
-      <% else %>
-        <li class="glyphicon glyphicon-home" aria-hidden="true">
-          <%= link_to "Home",top_path %>
-        </li>
+          <% else %>
+            <li class="glyphicon glyphicon-home" aria-hidden="true">
+              <%= link_to "Home",top_path, class: "home" %>
+            </li>
 
-        <li class="glyphicon glyphicon-user" aria-hidden="true">
-          <%= link_to "About" %>
-        </li>
-        <li class="glyphicon glyphicon-edit" aria-hidden="true">
-          <%= link_to "sign up", new_user_registration_path %>
-        </li>
-        <li class="glyphicon glyphicon-log-in" aria-hidden="true">
-          <%= link_to "login", new_user_session_path %>
-        </li>
-      <% end %>
-    </ul>
-  </nav>
+            <li class="about glyphicon glyphicon-user" aria-hidden="true">
+              <%= link_to "About", class: "about" %>
+            </li>
+            <li class="glyphicon glyphicon-edit" aria-hidden="true">
+              <%= link_to "sign up", new_user_registration_path, class: "sign_up" %>
+            </li>
+            <li class="glyphicon glyphicon-log-in" aria-hidden="true">
+              <%= link_to "login", new_user_session_path, class: "sign_in" %>
+            </li>
+          <% end %>
+         </ul>
+        </nav>
+      </div>
   </header>
 <%= yield %>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-3 col-xs-offset-9">
-      <p>CopyRight Infratop.inc</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-3 col-xs-offset-9">
+          <p>CopyRight Infratop.inc</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
   </body>
 </html>
