@@ -8,8 +8,8 @@ class User < ApplicationRecord
          has_many :posts
 
         validates :name,  presence: true,
-        				  length: { minimum: 2},
-        				  length: { maximum: 20}
+        				  length: { minimum: 2,maximum: 20}
+
 
         validates :itroduction, length: { maximum: 50}
 

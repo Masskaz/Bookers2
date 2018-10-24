@@ -5,12 +5,12 @@
 
   <div>
     <%= f.label :name,class: "name" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <%= f.text_field :name, autofocus: true, autocomplete: "name" ,class: "name"%>
   </div>
 
   <div>
     <%= f.label :email,class: "email" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" ,class: "email"%>
   </div>
 
   <div>
@@ -18,21 +18,19 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password",class: "password" %>
   </div>
 
   <div>
     <%= f.label :password_confirmation,class: "password_confirm" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "password_confirm" %>
   </div>
 
   <div>
     <%= f.submit "Sign up",class: "Sign-up label-success" %>
   </div>
 
-  <div class="">
-    <p>CopyRight Infratop.inc</p>
-  </div>
+
 
 <% end %>
 
