@@ -12,12 +12,12 @@
 				<td><h3>Title</h3></td>
 			</tr>
 			<tr>
-				<td><%= f.text_area :title %></td>
+				<td><%= f.text_area :title ,class: "book_title" %></td>
 			</tr>
 			<tr>
 				<td><h3>Opinion</h3></td>
 			</tr>
-				<td><%= f.text_area :opinion %><br></td>
+				<td><%= f.text_area :opinion ,class: "book_body"%><br></td>
 			</tr>
 			<tr>
 				<td><%= f.submit'Update Book',class: "CreateBook label-primary" %></td>

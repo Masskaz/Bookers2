@@ -12,19 +12,21 @@
 						<td><%= attachment_image_tag @user, :image ,:fill,50,50,format:'jpg',fallback: "noimage.jpg" %><br>
 
 						<%= link_to user_path(@user)do %>
-						<%= @user.name %>
+						<div class= "user_#{user.id}"><%= @user.name %></div>
 						<% end %>
 						</td>
 
 						<td><%= link_to post_path(@post)do %>
-							<%= @post.title %>
+							<div class= "book_#{post.id}"><%= @post.title %></div>
 							<% end %>
 						</td>
 
 						<td><%= @post.opinion %></td>
 
+						<% if current_user.id == @user.id %>
 						<td><%= link_to "Edit",edit_post_path(@post),class: "edit_book_#{@post.id} label label-success label-default"%></td>
 						<td><%= link_to "Destroy",post_path,method: :delete, data: { confirm: '削除しますか？' } ,class: "destroy_book_#{@post.id} label label-danger label-default" %></td>
+						<% end %>
 					</tr>
 			</table>
 		</div>

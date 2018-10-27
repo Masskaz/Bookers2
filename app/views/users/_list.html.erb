@@ -23,7 +23,10 @@
 						</td>
 					</tr>
 				</table>
+
+				<% if current_user.id == @user.id %>
 						<p><%= link_to "",edit_user_path(user),class: "edit_user_#{user.id} glyphicon glyphicon-wrench btn btn-default btn-block"%></p>
+				<% end %>
 
 					<h1>New book</h1>
 
