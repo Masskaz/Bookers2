@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
 
-  before_action :authenticate_user!
+ before_action :post_up_edit ,only:[:edit]
+
+  def post_up_edit
+  	@post = Post.find(params[:id])
+  	if @post.user != current_user
+		redirect_to posts_path
+  	end
+  end
 
 
 def show

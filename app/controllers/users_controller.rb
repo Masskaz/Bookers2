@@ -1,6 +1,13 @@
 class UsersController < ApplicationController
 
-  before_action :authenticate_user!
+  before_action :current_u ,only:[:edit]
+
+  def current_u
+  	@user = User.find(params[:id])
+  	if @user != current_user
+		redirect_to edit_user_path(current_user.id)
+  	end
+  end
 
 
 	def show
