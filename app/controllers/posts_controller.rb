@@ -20,6 +20,7 @@ def create
 	@post = Post.new(post_params)
 	@post.user_id = current_user.id
 	if @post.save
+		flash[:notice] = "successfully"
 		redirect_to post_path(@post.id)
 	else
 		@user=current_user
@@ -36,6 +37,7 @@ end
 def update
 	@post = Post.find(params[:id])
 	@post.update(post_params)
+	flash[:notice] = "successfully"
 	redirect_to post_path(@post.id)
 end
 
