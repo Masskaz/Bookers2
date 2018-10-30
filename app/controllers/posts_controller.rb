@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
 
+before_action :authenticate_user!
  before_action :post_up_edit ,only:[:edit]
 
   def post_up_edit
